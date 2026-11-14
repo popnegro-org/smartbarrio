@@ -31,27 +31,6 @@ const phone = config.whatsapp.phoneE164.replace(/\D/g, "");
 const whatsappUrl = (message = config.whatsapp.message) =>
   phone ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}` : null;
 
-function ContactLink({
-  children,
-  message,
-  className,
-}: {
-  children: React.ReactNode;
-  message?: string;
-  className?: string;
-}) {
-  const href = whatsappUrl(message);
-  return href ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {children}
-    </a>
-  ) : (
-    <a href="#contacto" aria-disabled="true" className={className}>
-      {children}
-    </a>
-  );
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
