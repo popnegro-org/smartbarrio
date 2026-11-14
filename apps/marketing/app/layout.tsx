@@ -5,7 +5,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: landingConfig.metadata.title,
   description: landingConfig.metadata.description,
-  metadataBase: new URL(landingConfig.metadata.siteUrl),
   openGraph: {
     title: landingConfig.metadata.title,
     description: landingConfig.metadata.description,
