@@ -1,5 +1,5 @@
 export type LandingConfig = {
-  metadata: { title: string; description: string; siteUrl: string };
+  metadata: { title: string; description: string };
   brand: { name: string; tagline: string; location: string };
   navigation: { label: string; href: string }[];
   whatsapp: { phoneE164: string; message: string; ariaLabel: string };
@@ -41,7 +41,6 @@ export const landingConfig: LandingConfig = {
   metadata: {
     title: "SmartWeb | Presencia digital para negocios de barrio",
     description: "Hacé que tu negocio sea más fácil de encontrar en Google. SmartWeb Express, presencia local y crecimiento digital para comercios de Maipú y Mendoza.",
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartweb.com.ar",
   },
   brand: {
     name: "SmartWeb",
