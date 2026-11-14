@@ -101,7 +101,7 @@ export const landingConfig: LandingConfig = {
         id: "smartweb-express", number: "02", badge: "PRODUCTO PRINCIPAL",
         title: "Tu negocio abierto en Internet las 24 horas.",
         description: "SmartWeb Express te proporciona una presencia digital profesional, preparada para recibir consultas y acompañar el crecimiento de tu comercio.",
-        benefits: ["Sitio profesional adaptado a celulares.", "Acceso directo a WhatsApp.", "Formulario para recibir consultas.", "Información de servicios y productos.", "Ubicación y datos de contacto.", "Alojamiento y mantenimiento administrados."],
+        benefits: ["Sitio profesional adaptado a celulares.", "Acceso directo a WhatsApp.", "Acceso directo a WhatsApp para recibir consultas.", "Información de servicios y productos.", "Ubicación y datos de contacto.", "Alojamiento y mantenimiento administrados."],
         idealFor: "Para negocios que necesitan profesionalizar su presencia digital sin complicaciones.",
         cta: "Quiero mi SmartWeb Express", featured: true,
       },
