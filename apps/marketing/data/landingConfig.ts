@@ -54,7 +54,7 @@ export const landingConfig: LandingConfig = {
     { label: "Preguntas frecuentes", href: "#faq" },
   ],
   whatsapp: {
-    phoneE164: process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "542613871088",
+    phoneE164: process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5492613871088",
     message: "Hola, quiero conocer cómo SmartWeb puede ayudar a mi negocio a tener más presencia en Internet.",
     ariaLabel: "Consultar por WhatsApp",
   },
