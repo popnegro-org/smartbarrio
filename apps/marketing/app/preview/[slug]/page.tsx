@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Vista previa · ${site.seo.title}`,
     description: site.seo.description,
+    openGraph: { title: site.seo.title, description: site.seo.description, type: "website" },
     robots: { index: false, follow: false },
   };
 }
