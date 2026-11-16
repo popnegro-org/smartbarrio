@@ -28,7 +28,7 @@ const sites: BusinessSite[] = [{
     address: "Armada Argentina 584, M5501 Godoy Cruz, Mendoza, Argentina",
     phone: "+54 261 513-0910",
     whatsapp: "5492615130910",
-    hours: ["Lunes a sábado · 08:30 a 21:00", "Domingo · Cerrado"]
+    hours: ["Atención · 24 horas, todos los días", "Domingos y feriados · Atención 24 horas"]
   },
   hero: {
     eyebrow: "MUDANZAS Y FLETES EN MENDOZA",
