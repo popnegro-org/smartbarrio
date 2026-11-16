@@ -1,5 +1,6 @@
 import type { BusinessSite } from "@/data/sites";
 import { LeadContactForm } from "@/components/lead-contact-form";
+import { MovingReservationForm } from "@/components/moving-reservation-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -88,13 +89,16 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
       )}
 
       <section className={`bg-gradient-to-br ${templatePresentation[site.template].heroBackground}`}>
-        <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-          <Badge variant="secondary">{site.hero.eyebrow || templatePresentation[site.template].label}</Badge>
-          <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight md:text-7xl">{site.hero.title}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{site.hero.description}</p>
-          <Button asChild size="lg" className="mt-8">
-            <a href={contact}>{site.hero.cta}<MessageCircle className="ml-2 h-5 w-5" /></a>
-          </Button>
+        <div className={`mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:py-20 ${site.slug === "mudanzas-miranda" ? "lg:grid-cols-[1.05fr_0.95fr]" : ""}`}>
+          <div>
+            <Badge variant="secondary">{site.hero.eyebrow || templatePresentation[site.template].label}</Badge>
+            <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight md:text-7xl">{site.hero.title}</h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{site.hero.description}</p>
+            <Button asChild size="lg" className="mt-8">
+              <a href={contact}>{site.hero.cta}<MessageCircle className="ml-2 h-5 w-5" /></a>
+            </Button>
+          </div>
+          {site.slug === "mudanzas-miranda" && <MovingReservationForm whatsapp={phone} />}
         </div>
       </section>
 
