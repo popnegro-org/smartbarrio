@@ -5,12 +5,42 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Clock3, MapPin, MessageCircle } from "lucide-react";
 
-const templateLabels: Record<BusinessSite["template"], string> = {
-  commerce: "Comercio",
-  gastronomy: "Gastronomía",
-  services: "Servicios",
-  professional: "Profesionales",
-  tourism: "Turismo",
+const templatePresentation: Record<BusinessSite["template"], {
+  label: string;
+  heroBackground: string;
+  offeringsTitle: string;
+  galleryTitle: string;
+}> = {
+  commerce: {
+    label: "Comercio",
+    heroBackground: "from-sky-100/80 via-blue-50 to-background",
+    offeringsTitle: "Productos destacados",
+    galleryTitle: "Conocé nuestro comercio",
+  },
+  gastronomy: {
+    label: "Gastronomía",
+    heroBackground: "from-amber-100/80 via-orange-50 to-background",
+    offeringsTitle: "Nuestra propuesta",
+    galleryTitle: "Un vistazo a nuestra cocina",
+  },
+  services: {
+    label: "Servicios",
+    heroBackground: "from-cyan-100/80 via-teal-50 to-background",
+    offeringsTitle: "Servicios disponibles",
+    galleryTitle: "Nuestro trabajo",
+  },
+  professional: {
+    label: "Profesionales",
+    heroBackground: "from-slate-200/80 via-slate-50 to-background",
+    offeringsTitle: "Áreas de atención",
+    galleryTitle: "Espacio profesional",
+  },
+  tourism: {
+    label: "Turismo",
+    heroBackground: "from-emerald-100/80 via-green-50 to-background",
+    offeringsTitle: "Experiencias y actividades",
+    galleryTitle: "Descubrí el lugar",
+  },
 };
 
 export function BusinessSiteView({ site }: { site: BusinessSite }) {
@@ -51,9 +81,9 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
         </div>
       )}
 
-      <section className="bg-gradient-to-br from-primary/10 to-background">
+      <section className={`bg-gradient-to-br ${templatePresentation[site.template].heroBackground}`}>
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-          <Badge variant="secondary">{site.hero.eyebrow || templateLabels[site.template]}</Badge>
+          <Badge variant="secondary">{site.hero.eyebrow || templatePresentation[site.template].label}</Badge>
           <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight md:text-7xl">{site.hero.title}</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{site.hero.description}</p>
           <Button asChild size="lg" className="mt-8">
@@ -64,8 +94,8 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
 
       <section className="mx-auto max-w-6xl px-5 py-16">
         <div className="mb-10">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">{site.business.category} · {templateLabels[site.template]}</p>
-          <h2 className="mt-2 text-3xl font-bold">Qué podés encontrar</h2>
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">{site.business.category} · {templatePresentation[site.template].label}</p>
+          <h2 className="mt-2 text-3xl font-bold">{templatePresentation[site.template].offeringsTitle}</h2>
           <p className="mt-3 max-w-3xl text-muted-foreground">{site.business.description}</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -84,7 +114,7 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
       {site.gallery.length > 0 && (
         <section className="bg-muted/30 py-16">
           <div className="mx-auto max-w-6xl px-5">
-            <h2 className="mb-8 text-3xl font-bold">Galería</h2>
+            <h2 className="mb-8 text-3xl font-bold">{templatePresentation[site.template].galleryTitle}</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {site.gallery.map((image, index) => (
                 <div
