@@ -14,3 +14,9 @@ test("business templates are constrained to the supported set", () => {
   const supported = ["commerce", "gastronomy", "services", "professional", "tourism"];
   assert.ok(getBusinessSites().every((site) => supported.includes(site.template)));
 });
+
+test("demo and published routes are separated by status", async () => {
+  const { getDemoSites, getPublishedSites } = await import("../data/sites");
+  assert.ok(getDemoSites().every((site) => site.status === "demo"));
+  assert.ok(getPublishedSites().every((site) => site.status === "published"));
+});
