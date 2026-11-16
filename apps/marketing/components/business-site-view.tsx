@@ -55,6 +55,7 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
     description: site.business.description,
     address: {
       "@type": "PostalAddress",
+      streetAddress: site.business.address,
       addressLocality: site.business.location,
       addressCountry: "AR",
     },
