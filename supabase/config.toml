@@ -1,0 +1,4 @@
+project_id = "rpopiqeulnxbsclvvfuf"
+
+[functions.smartbarrio-submit]
+verify_jwt = true
