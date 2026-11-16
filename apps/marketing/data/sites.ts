@@ -44,7 +44,7 @@ const sites: BusinessSite[] = [{
     { name: "Mudanzas económicas", description: "Alternativas de traslado adaptadas al alcance de cada servicio." },
     { name: "Logística integral", description: "Organización de mudanzas combinadas y corporativas en Mendoza." }
   ],
-  gallery: ["https://www.mudanzasmendoza.com.ar/img/search-mudanzas-miranda.png"],
+  gallery: ["https://mudanzasmendoza.com.ar/img/search-mudanzas-miranda.png"],
   testimonials: [],
   faqs: [
     { question: "¿Qué información necesito para pedir un presupuesto?", answer: "Compartí origen, destino, fecha y volumen aproximado de la mudanza para coordinar una cotización." },
