@@ -1,5 +1,3 @@
-"use client";
-
 import type { BusinessSite } from "@/data/sites";
 import { LeadContactForm } from "@/components/lead-contact-form";
 import { Button } from "@/components/ui/button";
@@ -32,8 +30,7 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
     },
     ...(site.business.phone ? { telephone: site.business.phone } : {}),
     ...(phone ? { contactPoint: { "@type": "ContactPoint", telephone: `+${phone}`, contactType: "customer service" } } : {}),
-    url: undefined,
-  };
+      };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
