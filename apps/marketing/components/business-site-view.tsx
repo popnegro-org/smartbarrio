@@ -157,7 +157,7 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
             <p className="mt-3 text-muted-foreground">{site.business.location}</p>
             {site.business.phone && (
               <p className="mt-3 text-muted-foreground">
-                Teléfono: <a className="font-semibold underline underline-offset-4" href={`tel:${site.business.phone.replace(/[^\\d+]/g, "")}`}>{site.business.phone}</a>
+                Teléfono: <a className="font-semibold underline underline-offset-4" href={`tel:${site.business.phone.replace(/[^0-9+]/g, "")}`}>{site.business.phone}</a>
               </p>
             )}
           </div>
