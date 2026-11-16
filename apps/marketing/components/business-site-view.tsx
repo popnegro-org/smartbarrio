@@ -155,6 +155,11 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
             <h2 className="text-3xl font-bold">Encontranos</h2>
             <p className="mt-4 flex items-center gap-2 text-muted-foreground"><MapPin className="h-5 w-5" />{site.business.address}</p>
             <p className="mt-3 text-muted-foreground">{site.business.location}</p>
+            {site.business.phone && (
+              <p className="mt-3 text-muted-foreground">
+                Teléfono: <a className="font-semibold underline underline-offset-4" href={`tel:${site.business.phone.replace(/[^\\d+]/g, "")}`}>{site.business.phone}</a>
+              </p>
+            )}
           </div>
           <div>
             <h2 className="text-3xl font-bold">Horarios</h2>
