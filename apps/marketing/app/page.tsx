@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { landingConfig as config } from "@/data/landingConfig";
+import { SalesInquiryForm } from "@/components/sales-inquiry-form";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -260,6 +261,8 @@ export default function Home() {
           </CardContent>
         </Card>
       </section>
+
+      <section className="px-5 pb-20"><div className="mx-auto max-w-3xl text-center"><h2 className="text-3xl font-bold md:text-4xl">Contanos sobre tu negocio</h2><p className="mt-4 text-muted-foreground">Dejanos tus datos y te contactamos para conversar sobre la solución adecuada.</p><SalesInquiryForm /></div></section>
 
       <footer className="border-t bg-background">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-7 px-5 py-10 md:flex-row md:items-center lg:px-8">
