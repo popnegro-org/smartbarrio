@@ -2,7 +2,7 @@ import type { BusinessSite } from "@/data/sites";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Clock3, MapPin, MessageCircle } from "lucide-react";
+import { Clock3, MapPin, MessageCircle } from "lucide-react";
 export function BusinessSiteView({ site }: { site: BusinessSite }) {
   const phone = site.business.whatsapp.replace(/\D/g, "");
   const contact = phone ? `https://wa.me/${phone}?text=${encodeURIComponent("Hola, quiero hacer una consulta.")}` : "#contacto";
