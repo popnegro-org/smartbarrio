@@ -7,7 +7,6 @@ import {
   Globe2,
   MapPin,
   MessageCircle,
-  ShoppingBag,
 } from "lucide-react";
 
 import { landingConfig as config } from "@/data/landingConfig";
@@ -25,7 +24,6 @@ import {
 const solutionIcons = {
   "google-maps": MapPin,
   "smartweb-express": Globe2,
-  "mercado-libre": ShoppingBag,
 } as const;
 
 const phone = config.whatsapp.phoneE164.replace(/\D/g, "");
@@ -126,7 +124,7 @@ export default function Home() {
             <h2 className="mt-5 text-3xl font-bold md:text-5xl">{config.solutions.title}</h2>
             <p className="mt-5 text-lg text-muted-foreground">{config.solutions.description}</p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
             {config.solutions.items.map((item) => {
               const Icon = solutionIcons[item.id];
               const message = `${config.whatsapp.message} ${item.title}`;
@@ -200,7 +198,7 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
             {config.plans.modules.map((module) => (
               <Card key={module.id} className={module.recommended ? "flex flex-col border-primary shadow-xl" : "flex flex-col"}>
                 <CardHeader>
