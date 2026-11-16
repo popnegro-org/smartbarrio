@@ -1,0 +1,45 @@
+name: Marketing app checks
+
+on:
+  push:
+    branches:
+      - feature/smartweb-marketing-landing
+    paths:
+      - "apps/marketing/**"
+      - ".github/workflows/marketing-checks.yml"
+  pull_request:
+    paths:
+      - "apps/marketing/**"
+      - ".github/workflows/marketing-checks.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/marketing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/marketing/package.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
