@@ -1,40 +1,22 @@
-# SmartWeb Marketing
+# SmartWeb Express PMV
 
-Aplicación comercial de SmartWeb Express, ubicada en `apps/marketing` según la arquitectura documentada de SmartWeb.
+Motor de sitios configurables para comercios locales, con plantillas reutilizables, SEO local, WhatsApp y recepción de consultas mediante Supabase Edge Functions.
 
-## Requisitos
+## Desarrollo
+- Node.js 20+
+- `npm install`
+- `cp .env.example .env.local`
+- `npm run dev`
 
-- Node.js 20 o superior
-- npm
+## Crear un comercio
+Agregar un objeto tipado en `data/sites.ts`. Cada sitio tiene `slug`, estado (`draft`, `demo`, `published`) y plantilla (`commerce`, `gastronomy`, `services`, `professional`, `tourism`). La ruta de demostración es `/demo/[slug]`. No publicar datos ficticios como comercios reales.
 
-## Instalación y ejecución
+## Variables
+- `NEXT_PUBLIC_WHATSAPP_PHONE`: número comercial internacional, solo dígitos.
+- `NEXT_PUBLIC_SITE_URL`: URL canónica para sitemap y robots.
+- `SUPABASE_URL` y `SUPABASE_ANON_KEY`: invocación server-side de `smartbarrio-submit`.
+La clave `service_role` debe permanecer exclusivamente en Supabase Edge Function y nunca configurarse en Vercel ni exponerse al navegador.
 
-```bash
-npm install
-cp .env.example .env.local
-npm run dev
-```
-
-La aplicación queda disponible en `http://localhost:3000`.
-
-## Variables de entorno
-
-Configurar `NEXT_PUBLIC_WHATSAPP_PHONE` en `.env.local` con el número comercial real en formato internacional, solo dígitos y sin el signo `+`. No incluir espacios ni guiones.
-
-Ejemplo de formato: código de país + característica + número.
-
-El botón flotante de WhatsApp solo se muestra cuando esta variable contiene un número.
-
-## Validaciones
-
-```bash
-npm run lint
-npm run typecheck
-npm run build
-```
-
-El workflow de GitHub Actions ejecuta estas tres validaciones en cada cambio de la aplicación de marketing.
-
-## Contenido
-
-Todo el contenido comercial y los datos de presentación están centralizados en `data/landingConfig.ts`. Los componentes consumen esa configuración y no contienen copy comercial fijo.
+## QA
+`npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+Las migraciones están en `supabase/migrations`.
