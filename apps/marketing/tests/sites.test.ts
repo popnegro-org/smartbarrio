@@ -20,3 +20,16 @@ test("demo and published routes are separated by status", async () => {
   assert.ok(getDemoSites().every((site) => site.status === "demo"));
   assert.ok(getPublishedSites().every((site) => site.status === "published"));
 });
+
+test("Mudanzas Miranda pilot profile remains a draft and has the expected business details", async () => {
+  const { getBusinessSite, getDraftSites } = await import("../data/sites");
+  const site = getBusinessSite("mudanzas-miranda");
+  assert.ok(site);
+  assert.equal(site.status, "draft");
+  assert.equal(site.business.name, "Mudanzas Miranda");
+  assert.equal(site.business.phone, "+54 261 513-0910");
+  assert.equal(site.business.address, "Armada Argentina 584, M5501 Godoy Cruz, Mendoza, Argentina");
+  assert.equal(site.services.length, 6);
+  assert.equal(site.gallery.length, 1);
+  assert.ok(getDraftSites().some((draft) => draft.slug === "mudanzas-miranda"));
+});
