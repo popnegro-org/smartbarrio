@@ -19,3 +19,5 @@ const sites: BusinessSite[] = [{
 }];
 export function getBusinessSite(slug: string) { return sites.find((site) => site.slug === slug); }
 export function getBusinessSites() { return sites.filter((site) => site.status !== "draft"); }
+export function getDemoSites() { return sites.filter((site) => site.status === "demo"); }
+export function getPublishedSites() { return sites.filter((site) => site.status === "published"); }
