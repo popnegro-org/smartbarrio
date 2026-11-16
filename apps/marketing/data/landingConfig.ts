@@ -14,7 +14,7 @@ export type LandingConfig = {
   solutions: {
     eyebrow: string; title: string; description: string;
     items: {
-      id: "google-maps" | "smartweb-express" | "mercado-libre";
+      id: "google-maps" | "smartweb-express";
       number: string; badge: string; title: string; description: string;
       benefits: string[]; idealFor: string; cta: string; featured: boolean;
     }[];
@@ -101,17 +101,9 @@ export const landingConfig: LandingConfig = {
         id: "smartweb-express", number: "02", badge: "PRODUCTO PRINCIPAL",
         title: "Tu negocio abierto en Internet las 24 horas.",
         description: "SmartWeb Express te proporciona una presencia digital profesional, preparada para recibir consultas y acompañar el crecimiento de tu comercio.",
-        benefits: ["Sitio profesional adaptado a celulares.", "Acceso directo a WhatsApp.", "Acceso directo a WhatsApp para recibir consultas.", "Información de servicios y productos.", "Ubicación y datos de contacto.", "Alojamiento y mantenimiento administrados."],
+        benefits: ["Sitio profesional adaptado a celulares.", "Acceso directo a WhatsApp para recibir consultas.", "Información de servicios y productos.", "Ubicación y datos de contacto.", "Alojamiento y mantenimiento administrados."],
         idealFor: "Para negocios que necesitan profesionalizar su presencia digital sin complicaciones.",
         cta: "Quiero mi SmartWeb Express", featured: true,
-      },
-      {
-        id: "mercado-libre", number: "03", badge: "EXPANSIÓN COMERCIAL",
-        title: "Llevá tus productos a todo el país.",
-        description: "Incorporamos el módulo comercial para que tu negocio pueda comenzar a vender a través de Mercado Libre con un catálogo inicial organizado.",
-        benefits: ["Configuración inicial de la tienda.", "Carga y organización del catálogo.", "Optimización de publicaciones iniciales.", "Configuración de Mercado Envíos según elegibilidad.", "Orientación para gestionar pedidos."],
-        idealFor: "Para comercios con productos de stock duradero y posibilidades de venta nacional.",
-        cta: "Quiero vender online", featured: false,
       },
     ],
   },
@@ -137,7 +129,6 @@ export const landingConfig: LandingConfig = {
     modules: [
       { id: "express", title: "SmartWeb Express", description: "La base digital profesional para tu comercio.", features: ["Landing profesional.", "Diseño adaptable a celulares.", "Integración con WhatsApp.", "Formulario de contacto.", "Ubicación y datos comerciales.", "Alojamiento administrado.", "Mantenimiento continuo."], cta: "Consultar SmartWeb Express", recommended: true },
       { id: "local", title: "Presencia Local", description: "Para que los vecinos puedan encontrarte en Google.", features: ["Alta de ficha comercial.", "Configuración de ubicación.", "Horarios y datos de contacto.", "Optimización de información comercial.", "Orientación para administrar tu ficha."], cta: "Consultar Presencia Local", recommended: false },
-      { id: "marketplace", title: "Expansión Comercial", description: "Para comercios que quieren llegar a nuevos mercados.", features: ["Configuración de tienda.", "Catálogo inicial.", "Optimización de publicaciones.", "Configuración de envíos según elegibilidad.", "Orientación comercial inicial."], cta: "Consultar Expansión Comercial", recommended: false },
     ],
     note: "La inversión se define según las necesidades del comercio, el alcance de la implementación y los módulos contratados. Consultanos para recibir una propuesta.",
   },
@@ -153,7 +144,6 @@ export const landingConfig: LandingConfig = {
       { question: "¿Tengo que contratar todos los módulos?", answer: "No. Podés comenzar con SmartWeb Express y sumar otras soluciones cuando tu negocio las necesite." },
       { question: "¿Me garantizan aparecer primero en Google?", answer: "Trabajamos para mejorar tu presencia y relevancia en las búsquedas locales, pero Google determina sus resultados y nadie puede garantizar una posición específica." },
       { question: "¿Qué necesito para comenzar?", answer: "Principalmente, los datos de tu comercio, ubicación, horarios, información de contacto y fotografías o materiales disponibles. También necesitaremos los accesos correspondientes cuando sean necesarios." },
-      { question: "¿Puedo vender mis productos en Mercado Libre?", answer: "Sí. Podemos acompañarte con la configuración inicial de la tienda y un catálogo de productos. Es una solución especialmente indicada para comercios con productos aptos para la venta y el envío a nivel nacional." },
     ],
   },
   finalCta: {
