@@ -80,6 +80,11 @@ export function BusinessSiteView({ site }: { site: BusinessSite }) {
           SITIO DE DEMOSTRACIÓN · NEGOCIO FICTICIO
         </div>
       )}
+      {site.status === "draft" && (
+        <div className="bg-sky-100 px-4 py-2 text-center text-sm font-semibold text-sky-950">
+          VISTA PREVIA · BORRADOR NO PUBLICADO · DATOS PENDIENTES DE APROBACIÓN
+        </div>
+      )}
 
       <section className={`bg-gradient-to-br ${templatePresentation[site.template].heroBackground}`}>
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
